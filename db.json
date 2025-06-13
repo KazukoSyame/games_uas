@@ -1,0 +1,14 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "imageUrl": "/assets/charmale.png",
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "imageUrl": "/assets/charfemale.png",
+      "gender": "female"
+    }
+  ]
+}

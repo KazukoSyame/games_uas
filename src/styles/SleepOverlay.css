@@ -1,0 +1,48 @@
+.sleep-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.sleep-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sleep-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sleep-character {
+  width: 145px;
+  height: 85px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  animation: sleepAnim 1s steps(2) infinite;
+  background-size: 290px 225px;
+  background-position-y: 0px;
+}
+@keyframes sleepAnim {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -290px;
+  }
+}
+
+.sleep-text {
+  color: white;
+  font-size: 24px;
+  font-family: 'Press Start 2P', cursive;
+}

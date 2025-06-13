@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-theme {
+  font-family: 'Press Start 2P';
+  font-size: 20px;
+  background-color: #1a1a2e;
+  color: white;
+  background-image: url('../assets/background-game.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}

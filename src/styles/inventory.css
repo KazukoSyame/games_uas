@@ -1,0 +1,75 @@
+#game-inventory {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #8b4513;
+  border-left: 3px solid #5d2906;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 15px;
+  overflow-y: auto;
+  color: white;
+}
+
+#game-inventory h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#game-inventory .item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+#game-inventory .item {
+  background: #5d2906;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+#game-inventory .item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+#game-inventory .item .quantity {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: gold;
+  color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.inventory-context-menu {
+  position: fixed;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  z-index: 2000;
+  padding: 4px;
+  border-radius: 4px;
+}
+.inventory-context-menu button {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.inventory-context-menu button:hover {
+  background-color: #eee;
+}

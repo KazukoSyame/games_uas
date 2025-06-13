@@ -1,0 +1,7 @@
+/* src/components/CharacterSprite.css */
+.character-sprite {
+  background-size: auto;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+

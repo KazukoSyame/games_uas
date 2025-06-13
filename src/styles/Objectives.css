@@ -1,0 +1,110 @@
+/* Objectives.css */
+.objectives-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(7px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.objectives-modal {
+  background: rgba(44, 62, 80, 0.95);
+  border-radius: 18px;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  min-width: 340px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  font-family: "Press Start 2P", cursive;
+  position: relative;
+}
+.objectives-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.objective-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+.objective-item {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.3s;
+}
+.objective-item.completed {
+  color: #aaa;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.objective-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #27ae60;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #27ae60;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.objective-check.completed {
+  background: #27ae60;
+  color: #fff;
+}
+.objectives-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  transition: background 0.2s;
+}
+.objectives-close-btn:hover {
+  background: #c0392b;
+}
+.objectives-icon-btn {
+  position: absolute;
+  top: 110px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  margin-top: 100px;
+  display: block;
+}
+.objectives-icon-btn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.18));
+  transition: transform 0.18s;
+}
+.objectives-icon-btn:hover img {
+  transform: scale(1.08) rotate(-3deg);
+}
+.objectives-icon-btn.dimmed img {
+  opacity: 0.45;
+  filter: grayscale(0%) brightness(70%);
+  pointer-events: none;
+  transition: opacity 0.2s, filter 0.2s;
+}

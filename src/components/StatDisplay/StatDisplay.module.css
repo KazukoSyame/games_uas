@@ -1,0 +1,34 @@
+.statsContainer {
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 20px;
+  width: 215px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.statName {
+  color: #555;
+}
+
+.statValue {
+  font-weight: bold;
+  color: #4a6fa5;
+  transition: all 0.3s ease;
+}
+
+.statValue.changed {
+  color: #f1c40f;
+  transform: scale(1.1);
+}
