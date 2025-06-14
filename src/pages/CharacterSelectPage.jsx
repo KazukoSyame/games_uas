@@ -26,11 +26,11 @@ const CharacterSelectPage = () => {
 
     // Set selectedCharacterImg sesuai gender
     if (selectedCharacter.gender === "female") {
-  localStorage.setItem("selectedCharacterImg", "/assets/charfemale.png");
-  localStorage.setItem("selectedCharacterSleepImg", "/assets/femalesleep.png"); // sesuai nama
+    localStorage.setItem("selectedCharacterImg", "/assets/charfemale.png");
+    localStorage.setItem("selectedCharacterSleepImg", "/assets/femalesleep.png"); // sesuai nama
 } else {
-  localStorage.setItem("selectedCharacterImg", "/assets/charmale.png");
-  localStorage.setItem("selectedCharacterSleepImg", "/assets/malesleep.png"); // sesuai nama
+    localStorage.setItem("selectedCharacterImg", "/assets/charmale.png");
+    localStorage.setItem("selectedCharacterSleepImg", "/assets/malesleep.png"); // sesuai nama
 }
 
     // Simpan ke Firestore

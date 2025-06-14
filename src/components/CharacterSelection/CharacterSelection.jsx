@@ -1,43 +1,47 @@
 import { useState, useEffect } from 'react';
-import { getCharacters } from '../../services/characterService';
 import './CharacterSelection.css';
 
 const CharacterSelection = ({ onCharacterSelect }) => {
-  const [characters, setCharacters] = useState([]);
+  const localCharacters = [
+    {
+      id: 1,
+      imageUrl: '/assets/charmale.png',
+      gender: 'male',
+      name: 'Male Character',
+    },
+    {
+      id: 2,
+      imageUrl: '/assets/charfemale.png',
+      gender: 'female',
+      name: 'Female Character',
+    },
+  ];
+
+  const [characters] = useState(localCharacters);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    const loadCharacters = async () => {
-      try {
-        const data = await getCharacters();
-        setCharacters(data);
-        // Set karakter pertama sebagai default
-        if (data.length > 0) {
-          onCharacterSelect(data[0]);
-        }
-      } catch (error) {
-        console.error('Error loading characters:', error);
-      }
-    };
-    loadCharacters();
-  }, [onCharacterSelect]);
+    // Select default character on load
+    if (characters.length > 0) {
+      onCharacterSelect(characters[0]);
+    }
+  }, [characters, onCharacterSelect]);
 
-// Update these functions in CharacterSelection.jsx
-const handlePrev = () => {
-  const newIndex = (selectedIndex - 1 + characters.length) % characters.length;
-  setSelectedIndex(newIndex);
-  const selectedChar = characters[newIndex];
-  onCharacterSelect(selectedChar);
-  localStorage.setItem('selectedCharacterImg', selectedChar.gender === 'female' ? '/assets/charfemale.png' : '/assets/charmale.png');
-};
+  const handlePrev = () => {
+    const newIndex = (selectedIndex - 1 + characters.length) % characters.length;
+    setSelectedIndex(newIndex);
+    const selectedChar = characters[newIndex];
+    onCharacterSelect(selectedChar);
+    localStorage.setItem('selectedCharacterImg', selectedChar.gender === 'female' ? '/assets/charfemale.png' : '/assets/charmale.png');
+  };
 
-const handleNext = () => {
-  const newIndex = (selectedIndex + 1) % characters.length;
-  setSelectedIndex(newIndex);
-  const selectedChar = characters[newIndex];
-  onCharacterSelect(selectedChar);
-  localStorage.setItem('selectedCharacterImg', selectedChar.gender === 'female' ? '/assets/charfemale.png' : '/assets/charmale.png');
-};
+  const handleNext = () => {
+    const newIndex = (selectedIndex + 1) % characters.length;
+    setSelectedIndex(newIndex);
+    const selectedChar = characters[newIndex];
+    onCharacterSelect(selectedChar);
+    localStorage.setItem('selectedCharacterImg', selectedChar.gender === 'female' ? '/assets/charfemale.png' : '/assets/charmale.png');
+  };
 
   if (characters.length === 0) return <div className="loading">Loading characters...</div>;
 

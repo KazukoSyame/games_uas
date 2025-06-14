@@ -12,7 +12,7 @@ html, body {
 }
 
 body.login-page {
-  background: url('../public/assets/__original_drawn_by_eastblueace__7252bfc06f5f3220c8de058d38b4f4f3.png') no-repeat center center fixed;
+  background: url('/assets/__original_drawn_by_eastblueace__7252bfc06f5f3220c8de058d38b4f4f3.png') no-repeat center center fixed;
   background-size: 130%;
   background-repeat: no-repeat;
   background-color: #000;
